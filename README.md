@@ -94,7 +94,7 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
    ./scripts/delete-cluster.sh
    ```
    
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
 This project highlights practical skills across Kubernetes, AWS, and DevOps workflows:
 
