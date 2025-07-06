@@ -31,7 +31,6 @@ NAMESPACE="kube-system"
 HELM_REPO="eks"
 HELM_CHART="aws-load-balancer-controller"
 
-
 # Add the EKS Helm repository
 helm repo add eks https://aws.github.io/eks-charts
 helm repo update eks
