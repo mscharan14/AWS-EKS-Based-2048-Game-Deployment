@@ -50,7 +50,7 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
    Deploy the application using the deployment and service manifests:
 
    ```
-   kubectl apply -f manifests/deploy.yml
+   kubectl apply -f manifests/deployment.yml
    kubectl apply -f manifests/service.yml
    ```
 
@@ -65,8 +65,9 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
 7. **Access the Application**
 
    After the ingress is set up, you can access the 2048 game application using the ALB URL provided in the AWS console.
+   
 
-8. **Delete the Cluster (Optional)**
+9. **Delete the Cluster (Optional)**
 
    If you want to delete the EKS cluster, run:
 
