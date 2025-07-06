@@ -39,10 +39,12 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
 
 4. **Create Fargate Profile**
 
-   Apply the Fargate profile configuration:
-
    ```
-   kubectl apply -f manifests/fargate-profile.yml
+   eksctl create fargateprofile \
+    --cluster demo-cluster \
+    --region us-east-1 \
+    --name alb-sample-app \
+    --namespace game-2048
    ```
 
 5. **Deploy the Application**
