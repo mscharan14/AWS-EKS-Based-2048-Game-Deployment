@@ -65,6 +65,7 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
 7. **Access the Application**
 
    After the ingress is set up, you can access the 2048 game application using the ALB URL provided in the AWS console.
+
    ![Preview](./Application-Preview.png)
 
 
