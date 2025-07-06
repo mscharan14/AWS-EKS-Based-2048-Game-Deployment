@@ -31,23 +31,25 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
 
 3. **Setup ALB Controller**
 
-   Install and configure the AWS Load Balancer Controller:
+   Install and configure the AWS Load Balancer Controller following the steps mentioned in the following bash script:
 
    ```
    ./scripts/setup-alb-controller.sh
    ```
 
 4. **Create Fargate Profile**
-
+5. 
+   This prepares your cluster to run the application in a serverless Fargate environment and creates a dedicated namespace (game-2048) for it.
+   
    ```
    eksctl create fargateprofile \
-    --cluster demo-cluster \
+    --cluster 2048-cluster \
     --region us-east-1 \
     --name alb-sample-app \
     --namespace game-2048
    ```
 
-5. **Deploy the Application**
+7. **Deploy the Application**
 
    Deploy the application using the deployment and service manifests:
 
@@ -56,7 +58,7 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
    kubectl apply -f manifests/service.yml
    ```
 
-6. **Setup Ingress**
+8. **Setup Ingress**
 
    Apply the ingress configuration to expose the application:
 
@@ -64,7 +66,7 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
    kubectl apply -f manifests/ingress.yml
    ```
    
-7. **Verify the deployment**
+9. **Verify the deployment**
 
    Check that all pods, services, and the Ingress are properly deployed:
 
@@ -73,7 +75,7 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
    kubectl get ingress -n game-2048
    ```
 
-8. **Access the Application**
+10. **Access the Application**
 
    After a few minutes, the ALB URL will be provisioned. Get it via:
    
@@ -86,7 +88,7 @@ This project demonstrates the end-to-end deployment of a 2048 game application o
    ![Preview](./Application-Preview.png)
 
 
-9. **Delete the Cluster (Optional)**
+11. **Delete the Cluster (Optional)**
 
    If you want to delete the EKS cluster, run:
 
